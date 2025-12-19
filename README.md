@@ -116,7 +116,8 @@ python sh2_save_editor.py SaveGameData_2.sav --health 100 --no-backup
 | `--info` | Display save file information | `--info` |
 | `--health <value>` | Set health (0.0 to 100.0) | `--health 100.0` |
 | `--pistol <ammo>` | Set pistol ammo | `--pistol 999` |
-| `--shotgun <ammo>` | Set shotgun ammo | `--shotgun 100` |
+| `--shotgun <ammo>` | Set shotgun ammo | `--shotgun 500` |
+| `--rifle <ammo>` | Set rifle ammo | `--rifle 500` |
 | `--healthdrink <qty>` | Set health drink quantity | `--healthdrink 99` |
 | `--syringe <qty>` | Set syringe quantity | `--syringe 50` |
 | `--handgunammo <qty>` | Set handgun ammo (inventory) | `--handgunammo 999` |
@@ -153,12 +154,6 @@ C:\Users\[YourUsername]\AppData\Local\SilentHill2\Saved\SaveGames\
 
 **Note:** Exact paths may vary. Look for files named `SaveGameData_X.sav` where X is a number (0-9).
 
-### Linux (Steam Proton)
-```
-/home/<user>/.steam/steam/steamapps/compatdata/2124490/pfx/drive_c/users/steamuser/AppData/Local/SilentHill2/Saved/SaveGames/123456789012345678
-```
-*Replace `<user>` with your Linux username. The final folder (the long number) is your SteamID64 and may differ.*
-
 ## Examples
 
 ### Example 1: Max Medical Supplies
@@ -173,7 +168,8 @@ python sh2_save_editor.py SaveGameData_2.sav \
 ```bash
 python sh2_save_editor.py SaveGameData_2.sav \
   --pistol 999 \
-  --shotgun 100 \
+  --shotgun 500 \
+  --rifle 500 \
   --handgunammo 999 \
   --shotgunammo 99
 ```
@@ -183,7 +179,8 @@ python sh2_save_editor.py SaveGameData_2.sav \
 python sh2_save_editor.py SaveGameData_2.sav \
   --health 100.0 \
   --pistol 999 \
-  --shotgun 100 \
+  --shotgun 500 \
+  --rifle 500 \
   --healthdrink 99 \
   --syringe 99 \
   --handgunammo 999 \
@@ -234,7 +231,10 @@ This shouldn't happen with the current version, but if it does:
 - Health: 100.0 (game maximum)
 - Health Drinks: 99 (safe)
 - Syringes: 99 (safe)
-- Ammo: 999 (safe for weapons), 99 (safe for inventory items)
+- Pistol Ammo: 999 (safe)
+- Shotgun Ammo: 500 (safe)
+- Rifle Ammo: 500 (safe)
+- Inventory Items: 99 (safe)
 
 Setting extremely high values (like 999,999) may cause:
 - UI display glitches

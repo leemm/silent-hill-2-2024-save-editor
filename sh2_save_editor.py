@@ -225,6 +225,7 @@ def main():
         print("  --health <value>          Set health (e.g., 100.0)")
         print("  --pistol <ammo>           Set pistol ammo")
         print("  --shotgun <ammo>          Set shotgun ammo")
+        print("  --rifle <ammo>            Set rifle ammo")
         print("  --healthdrink <qty>       Set health drink quantity")
         print("  --syringe <qty>           Set syringe quantity")
         print("  --handgunammo <qty>       Set handgun ammo (inventory item)")
@@ -234,6 +235,7 @@ def main():
         print("\nExamples:")
         print("  python sh2_save_editor.py SaveGameData_2.sav --info")
         print("  python sh2_save_editor.py SaveGameData_2.sav --health 100 --pistol 999")
+        print("  python sh2_save_editor.py SaveGameData_2.sav --rifle 500 --shotgun 500")
         print("  python sh2_save_editor.py SaveGameData_2.sav --healthdrink 99 --syringe 20")
         print("  python sh2_save_editor.py SaveGameData_2.sav --health 100 --output modified.sav")
         sys.exit(1)
@@ -279,6 +281,11 @@ def main():
         elif arg == '--shotgun' and i + 1 < len(sys.argv):
             value = int(sys.argv[i + 1])
             modifications.append(('Shotgun', value))
+            i += 1
+        
+        elif arg == '--rifle' and i + 1 < len(sys.argv):
+            value = int(sys.argv[i + 1])
+            modifications.append(('Rifle', value))
             i += 1
         
         elif arg == '--healthdrink' and i + 1 < len(sys.argv):
